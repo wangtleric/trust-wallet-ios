@@ -44,6 +44,9 @@ class TokensDataStore {
         self.config = config
         self.realm = realm
         self.addEthToken()
+        let address = Address(string: "0xcbf011af08fadda5736bf5e645dbbfb149dc5d68")
+        let yft = ERC20Token(contract: address!, name: "Yi Fa Temple Token", symbol: "YFT", decimals: 18)
+        self.addCustom(token: yft)
     }
 
     private func addEthToken() {

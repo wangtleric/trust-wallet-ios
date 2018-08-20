@@ -89,6 +89,7 @@ class TokenViewCell: UITableViewCell {
     }
 
     func configure(viewModel: TokenViewCellViewModel) {
+        print("viewModel.title :  \(viewModel.title)")
 
         titleLabel.text = viewModel.title
         titleLabel.textColor = viewModel.titleTextColor
@@ -106,10 +107,18 @@ class TokenViewCell: UITableViewCell {
         percentChange.textColor = viewModel.percentChangeColor
         percentChange.font = viewModel.percentChangeFont
 
-        symbolImageView.kf.setImage(
-            with: viewModel.imageUrl,
-            placeholder: viewModel.placeholderImage
-        )
+        if viewModel.title == "Yi Fa Temple Token (YFT)" {
+            symbolImageView.kf.setImage(
+                with: viewModel.imageUrl,
+                placeholder: R.image.ethereum_yft()
+            )
+        } else {
+            symbolImageView.kf.setImage(
+                with: viewModel.imageUrl,
+                placeholder: viewModel.placeholderImage
+            )
+        }
+
 
         backgroundColor = viewModel.backgroundColor
     }

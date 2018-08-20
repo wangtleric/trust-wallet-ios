@@ -11,7 +11,7 @@ class WalletViewController: UIViewController {
     fileprivate lazy var segmentController: UISegmentedControl = {
         let items = [
             NSLocalizedString("Tokens", value: "Tokens", comment: ""),
-            NSLocalizedString("Collectibles", value: "Collectibles", comment: ""),
+            //NSLocalizedString("Collectibles", value: "Collectibles", comment: ""),
         ]
         let segmentedControl = UISegmentedControl(items: items)
         segmentedControl.selectedSegmentIndex = DeteilsViewType.tokens.rawValue
@@ -52,7 +52,8 @@ class WalletViewController: UIViewController {
 
     private func updateView() {
         if segmentController.selectedSegmentIndex == DeteilsViewType.tokens.rawValue {
-            showBarButtonItems()
+            //showBarButtonItems()
+            hideBarButtonItems()
             remove(asChildViewController: nonFungibleTokensViewController)
             add(asChildViewController: tokensViewController)
         } else {

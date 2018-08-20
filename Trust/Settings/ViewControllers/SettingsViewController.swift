@@ -139,36 +139,36 @@ class SettingsViewController: FormViewController, Coordinator {
             +++ Section()
 
             <<< currencyRow()
-            <<< browserRow()
+//            <<< browserRow()
 
-            +++ Section(NSLocalizedString("settings.joinCommunity.label.title", value: "Join Community", comment: ""))
-
-            <<< linkProvider(type: .twitter)
-            <<< linkProvider(type: .telegram)
-            <<< linkProvider(type: .facebook)
-            <<< linkProvider(type: .discord)
-
-            +++ Section(NSLocalizedString("settings.support.label.title", value: "Support", comment: ""))
-
-            <<< AppFormAppearance.button { button in
-                button.title = NSLocalizedString("settings.shareWithFriends.button.title", value: "Share With Friends", comment: "")
-                button.cell.imageView?.image = R.image.settings_colorful_share()
-            }.onCellSelection { [unowned self] cell, _  in
-                self.helpUsCoordinator.presentSharing(in: self, from: cell.contentView)
-            }
-
-            +++ Section()
-
-            <<< aboutRow()
-            <<< supportRow()
-
-            +++ Section()
-
-            <<< TextRow {
-                $0.title = NSLocalizedString("settings.version.label.title", value: "Version", comment: "")
-                $0.value = Bundle.main.fullVersion
-                $0.disabled = true
-            }
+//            +++ Section(NSLocalizedString("settings.joinCommunity.label.title", value: "Join Community", comment: ""))
+//
+//            <<< linkProvider(type: .twitter)
+//            <<< linkProvider(type: .telegram)
+//            <<< linkProvider(type: .facebook)
+//            <<< linkProvider(type: .discord)
+//
+//            +++ Section(NSLocalizedString("settings.support.label.title", value: "Support", comment: ""))
+//
+//            <<< AppFormAppearance.button { button in
+//                button.title = NSLocalizedString("settings.shareWithFriends.button.title", value: "Share With Friends", comment: "")
+//                button.cell.imageView?.image = R.image.settings_colorful_share()
+//            }.onCellSelection { [unowned self] cell, _  in
+//                self.helpUsCoordinator.presentSharing(in: self, from: cell.contentView)
+//            }
+//
+//            +++ Section()
+//
+//            <<< aboutRow()
+//            <<< supportRow()
+//
+//            +++ Section()
+//
+//            <<< TextRow {
+//                $0.title = NSLocalizedString("settings.version.label.title", value: "Version", comment: "")
+//                $0.value = Bundle.main.fullVersion
+//                $0.disabled = true
+//            }
     }
 
     private func networkRow() -> PushRow<RPCServer> {

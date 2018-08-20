@@ -31,13 +31,13 @@ class TokensViewController: UIViewController {
 
     lazy var footer: TokensFooterView = {
         let footer = TokensFooterView(frame: .zero)
-        footer.textLabel.text = viewModel.footerTitle
+        footer.textLabel.text = ""//viewModel.footerTitle
         footer.textLabel.font = viewModel.footerTextFont
         footer.textLabel.textColor = viewModel.footerTextColor
         footer.frame.size = footer.systemLayoutSizeFitting(UILayoutFittingExpandedSize)
-        footer.addGestureRecognizer(
-            UITapGestureRecognizer(target: self, action: #selector(missingToken))
-        )
+//        footer.addGestureRecognizer(
+//            UITapGestureRecognizer(target: self, action: #selector(missingToken))
+//        )
         return footer
     }()
 
@@ -107,7 +107,7 @@ class TokensViewController: UIViewController {
         startTokenObservation()
         title = viewModel.title
         view.backgroundColor = viewModel.backgroundColor
-        footer.textLabel.text = viewModel.footerTitle
+        footer.textLabel.text = ""//viewModel.footerTitle
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -127,11 +127,11 @@ class InCoordinator: Coordinator {
         let tabBarController = TabBarController()
         tabBarController.tabBar.isTranslucent = false
 
-        let browserCoordinator = BrowserCoordinator(session: session, keystore: keystore, navigator: navigator, sharedRealm: sharedRealm)
-        browserCoordinator.delegate = self
-        browserCoordinator.start()
-        browserCoordinator.rootViewController.tabBarItem = viewModel.browserBarItem
-        addCoordinator(browserCoordinator)
+//        let browserCoordinator = BrowserCoordinator(session: session, keystore: keystore, navigator: navigator, sharedRealm: sharedRealm)
+//        browserCoordinator.delegate = self
+//        browserCoordinator.start()
+//        browserCoordinator.rootViewController.tabBarItem = viewModel.browserBarItem
+//        addCoordinator(browserCoordinator)
 
         let walletCoordinator = TokensCoordinator(
             session: session,
@@ -158,7 +158,7 @@ class InCoordinator: Coordinator {
         addCoordinator(settingsCoordinator)
 
         tabBarController.viewControllers = [
-            browserCoordinator.navigationController,
+            //browserCoordinator.navigationController,
             walletCoordinator.navigationController,
             transactionCoordinator.navigationController,
             settingsCoordinator.navigationController,
@@ -169,6 +169,7 @@ class InCoordinator: Coordinator {
         addCoordinator(transactionCoordinator)
 
         showTab(.wallet(.none))
+//        showTab(.browser(openURL: URL?))
 
         keystore.recentlyUsedWallet = account
 
